@@ -1,0 +1,31 @@
+#include <iostream> 
+#include <stdio.h>
+using namespace std;
+
+int main ()
+{
+    float k = 1.247;
+    int i, N = 6, buf, step;
+    int M[6];
+    for (int i = 0; i < 6; i++) 
+    {
+        scanf("%d", &M[i]);
+   }
+    step = N-1;
+    while (step >=1) {
+        for (i=0; i<N-step; i++) 
+        {
+            if (M[i] > M[i+step]) {
+                buf = M[i];
+                M[i] = M[i+step];
+                M[i+step] = buf;
+            }
+        }
+        step = step/k;
+    }
+     for (int i = 0; i<6; i++) {
+     printf("%d ", M[i]);
+     }
+
+}
+
